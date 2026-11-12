@@ -21,7 +21,7 @@ def main(argv=None):
     model = build_astra(backend=args.backend).eval()
     deployed = model.to_deploy()
     report = {
-        "core_version": "0.1.3",
+        "core_version": "0.1.4",
         "backend": model.backend,
         "parameters_with_auxiliary": sum(p.numel() for p in model.parameters()),
         "parameters_deployed": sum(p.numel() for p in deployed.parameters()),

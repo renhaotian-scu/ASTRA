@@ -22,7 +22,7 @@ class MFM(nn.Module):
                 self.conv1x1.append(nn.Identity())
 
     def forward(self, in_feats_):
-        assert len(in_feats_) == self.height, f'MFM 期望 {self.height} 个输入,实际收到 {len(in_feats_)} 个,请检查 YAML 该层的 from 索引。'
+        assert len(in_feats_) == self.height, f'Expected {self.height} fusion inputs, received {len(in_feats_)}.'
         in_feats = []
         for idx, layer in enumerate(self.conv1x1):
             in_feats.append(layer(in_feats_[idx]))
@@ -46,8 +46,8 @@ class RTDETRDenseAuxHead(nn.Module):
         self.nc = nc
         self.register_buffer('stride', torch.tensor(strides).float(), persistent=False)
         self.aux_mask_preds = None
-        assert len(ch) > 0, 'RTDETRDenseAuxHead 收到空的 ch,说明 parse_model 未把来源通道数传进来。请确认 ASTRA-PATCH P1 已生效。'
-        assert len(ch) == len(strides), f'RTDETRDenseAuxHead: 输入层数 {len(ch)} 与 strides 数量 {len(strides)} 不一致。'
+        assert len(ch) > 0, 'Input channel metadata must not be empty.'
+        assert len(ch) == len(strides), f'Input feature count {len(ch)} must match stride count {len(strides)}.'
         self.mask_projs = nn.ModuleList([nn.Sequential(nn.Conv2d(c, hd // 4, kernel_size=3, padding=1, bias=False), nn.BatchNorm2d(hd // 4), nn.ReLU(inplace=True), nn.Conv2d(hd // 4, 1, kernel_size=1)) for c in ch])
 
     def forward(self, x):

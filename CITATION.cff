@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "Please cite the accompanying ASTRA manuscript when using this core source."
 title: "ASTRA: Adapting Real-Time Detection Transformers to Infrared Small Targets in Remote Sensing Imagery"
 type: software
-version: 0.1.3
+version: 0.1.4
 authors:
   - family-names: Ren
     given-names: Haotian

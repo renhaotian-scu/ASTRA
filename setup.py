@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="astra-irstd-core",
-    version="0.1.3",
+    version="0.1.4",
     description="ASTRA core architecture and unified target-level evaluation",
     long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
