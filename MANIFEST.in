@@ -1,0 +1,9 @@
+include README.md LICENSE NOTICE THIRD_PARTY_NOTICES.md CITATION.cff requirements.txt environment.yml CORE_SOURCE_MANIFEST.json
+recursive-include LICENSES *.txt *.json
+recursive-include configs *.yaml *.yml
+recursive-include docs *.md
+recursive-include tests *.py
+recursive-include examples *.py
+recursive-include evaluation *.md *.txt *.json
+global-exclude *.pyc
+global-exclude *.pyo

@@ -1,0 +1,8 @@
+# Install a PyTorch build suitable for your device first.
+torch>=2.4.1
+numpy>=1.23.5
+scipy>=1.10.1
+PyYAML>=6.0
+Pillow>=10.0
+# Optional accelerated sampling: install a torchvision build matching torch.
+# Native MMCV is another optional backend; it is not required by the CPU checks.

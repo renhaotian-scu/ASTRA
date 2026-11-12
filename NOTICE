@@ -1,0 +1,40 @@
+ASTRA pre-acceptance core source package
+
+The detector integration includes modified Ultralytics code, whose AGPL-3.0
+notice and license are retained. The top-level LICENSE contains those terms.
+This package does not grant an alternative commercial license or relicense
+third-party components as MIT. Separately identified third-party works retain
+their own notices and applicable license terms.
+
+Frequency-adaptive convolution components draw on FADC:
+https://github.com/Linwei-Chen/FADC
+The preserved source header credits Meta Platforms, Inc. and affiliates.
+The official FADC project license is Apache-2.0.
+
+HiLo attention draws on LITv2:
+Copyright (c) 2022 Zhuang Intelligent Processing Lab. All rights reserved.
+Written by Zizheng Pan
+https://github.com/ziplab/LITv2
+Apache-2.0; see LICENSES/HiLo-LITv2-Apache-2.0.txt.
+
+The dual-layout LayerNorm draws on ConvNeXt:
+Copyright (c) Meta Platforms, Inc. and affiliates.
+https://github.com/facebookresearch/ConvNeXt
+MIT; see LICENSES/ConvNeXt-MIT.txt.
+
+The MFM fusion component draws on DCMPNet:
+Copyright (c) 2022 IDKiro
+https://github.com/zhoushen1/DCMPNet
+MIT; see LICENSES/DCMPNet-MIT.txt.
+
+MMCV is an optional external deformable-convolution dependency:
+https://github.com/open-mmlab/mmcv
+Apache-2.0; no compiled MMCV binary is bundled.
+
+Modifications for this source distribution: isolate the ASTRA-related symbols,
+replace framework-wide imports with explicit local dependencies, add documented
+portable operator integration, expose architecture and deployment interfaces,
+and package the independent target-level evaluation CLI. Original source bodies
+and release changes are recorded in the source-provenance documentation.
+These notices preserve attribution; they do not assert new ownership of the
+upstream works. See THIRD_PARTY_NOTICES.md and LICENSES/SOURCES.json.

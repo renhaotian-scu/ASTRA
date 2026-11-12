@@ -1,0 +1,56 @@
+[
+  {
+    "project": "Linwei-Chen/FADC",
+    "license_file": "LICENSES/FADC-Apache-2.0.txt",
+    "license_source_url": "https://raw.githubusercontent.com/Linwei-Chen/FADC/main/LICENSE",
+    "license_text_SHA256": "3a0b32a74c46bdda3499ec9f39ab4f2a98fc2b239a1c1c1592086d26fdf76159",
+    "web_source_line_count": 180,
+    "all_web_source_lines_present": true,
+    "source_scope": "Official repository license as reviewed on 2026-11-12; exact historical transplant commit is not established."
+  },
+  {
+    "project": "ziplab/LITv2",
+    "license_file": "LICENSES/HiLo-LITv2-Apache-2.0.txt",
+    "license_source_url": "https://raw.githubusercontent.com/ziplab/LITv2/main/LICENSE",
+    "license_text_SHA256": "3a0b32a74c46bdda3499ec9f39ab4f2a98fc2b239a1c1c1592086d26fdf76159",
+    "web_source_line_count": 180,
+    "all_web_source_lines_present": true,
+    "source_scope": "Official repository license as reviewed on 2026-11-12; exact historical transplant commit is not established."
+  },
+  {
+    "project": "open-mmlab/mmcv",
+    "license_file": "LICENSES/MMCV-Apache-2.0.txt",
+    "license_source_url": "https://raw.githubusercontent.com/open-mmlab/mmcv/main/LICENSE",
+    "license_text_SHA256": "1afc57315b4e9c2e20870fb9b61700a9ec3bc56c5d84e8f779a0cd3d6a1f4249",
+    "web_source_line_count": 181,
+    "all_web_source_lines_present": true,
+    "source_scope": "Official repository license as reviewed on 2026-11-12; exact historical transplant commit is not established."
+  },
+  {
+    "project": "ultralytics/ultralytics",
+    "license_file": "LICENSES/Ultralytics-AGPL-3.0.txt",
+    "license_source_url": "https://raw.githubusercontent.com/ultralytics/ultralytics/main/LICENSE",
+    "license_text_SHA256": "cc738edf1b6782543010a9bef4302b5392575a281b18de30d8d96905fd5ea3bf",
+    "web_source_line_count": 585,
+    "all_web_source_lines_present": true,
+    "source_scope": "Official repository license as reviewed on 2026-11-12; exact historical transplant commit is not established."
+  },
+  {
+    "project": "facebookresearch/ConvNeXt",
+    "license_file": "LICENSES/ConvNeXt-MIT.txt",
+    "license_source_url": "https://raw.githubusercontent.com/facebookresearch/ConvNeXt/main/LICENSE",
+    "license_text_SHA256": "a0bc85b100f4632ad2f1af5720d9a5cc1fe1a98eafaa122c26cada4a7d3ef034",
+    "web_source_line_count": 19,
+    "all_web_source_lines_present": true,
+    "source_scope": "Official repository license as reviewed on 2026-11-12; exact historical transplant commit is not established."
+  },
+  {
+    "project": "zhoushen1/DCMPNet",
+    "license_file": "LICENSES/DCMPNet-MIT.txt",
+    "license_source_url": "https://raw.githubusercontent.com/zhoushen1/DCMPNet/main/LICENSE",
+    "license_text_SHA256": "1732e78acf7522368770bbb01d1f85049721bf0da249bbb825a84165d79d1fb6",
+    "web_source_line_count": 19,
+    "all_web_source_lines_present": true,
+    "source_scope": "Official repository license as reviewed on 2026-11-12; exact historical transplant commit is not established."
+  }
+]

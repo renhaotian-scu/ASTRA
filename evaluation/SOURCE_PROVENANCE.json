@@ -1,0 +1,157 @@
+{
+  "scope": "Preparation of a portable four-metric evaluator, not a release of benchmark predictions, datasets, or trained weights.",
+  "scientific_source": {
+    "file": "wp2_protocol_v2.py",
+    "raw_file_SHA256": "27c7b5b4beb99e3f882115d88aea87c404851f8a9cb94dee4bf983c827b7ea97",
+    "version": "WP2_mask_to_box_v2",
+    "available_identical_work_copies_verified": 17
+  },
+  "geometric_source": {
+    "file": "protocol.py archived with the adopted evaluation runner",
+    "raw_file_SHA256": "036047bb4d6ba924acfae21ac7b1a2ac1a4e28593af14529b18afa0333379bb0"
+  },
+  "reporting_source": {
+    "file": "four_metric_table_spec.json",
+    "raw_file_SHA256": "7fffec8e32ac0e523aefdd38395d14fbdaaffd7fff0cd1994efecd3ae96574de"
+  },
+  "extracted_functions": {
+    "geometry.py": [
+      {
+        "function": "_np",
+        "source_file": "protocol.py",
+        "source_file_SHA256": "036047bb4d6ba924acfae21ac7b1a2ac1a4e28593af14529b18afa0333379bb0",
+        "source_lines": [
+          33,
+          35
+        ],
+        "extracted_function_LF_SHA256": "fd53e2ec76dcb13caab9c074b42035d0fab19800386707cd8b93aeb09bb645f6",
+        "function_AST_SHA256": "23e7de7695d2ef89be7ec564e542fbad73df75ba66377364098640d7833b7fd0"
+      },
+      {
+        "function": "category_id",
+        "source_file": "protocol.py",
+        "source_file_SHA256": "036047bb4d6ba924acfae21ac7b1a2ac1a4e28593af14529b18afa0333379bb0",
+        "source_lines": [
+          72,
+          76
+        ],
+        "extracted_function_LF_SHA256": "279db93a5a851f01749e2490c5e667799539cdb58af64c9e616c5f42e6de92c6",
+        "function_AST_SHA256": "822d49748b38984c6d4c43cf8da873695c33237f02e641ec57e368783c2c9f0c"
+      },
+      {
+        "function": "_validate_gt",
+        "source_file": "protocol.py",
+        "source_file_SHA256": "036047bb4d6ba924acfae21ac7b1a2ac1a4e28593af14529b18afa0333379bb0",
+        "source_lines": [
+          79,
+          97
+        ],
+        "extracted_function_LF_SHA256": "ecf9baa22014b47f7a205b3829be2db73b94b5194768dce289b040b245bcfdaa",
+        "function_AST_SHA256": "834e7911b11c687990597d26c538307fb49b1b1e11e29114310d87f5f4f81764"
+      },
+      {
+        "function": "samples_for_split",
+        "source_file": "protocol.py",
+        "source_file_SHA256": "036047bb4d6ba924acfae21ac7b1a2ac1a4e28593af14529b18afa0333379bb0",
+        "source_lines": [
+          217,
+          220
+        ],
+        "extracted_function_LF_SHA256": "de22d1a9565821a3b7f4a66a59a0a73539cca5ad2a8e2dd26c20b2ef0d3ed743",
+        "function_AST_SHA256": "8b50926a25deea841307ec3b46c32999fa9dd7b667415b3a36d1bd1c86cc5d08"
+      },
+      {
+        "function": "restore_probability",
+        "source_file": "protocol.py",
+        "source_file_SHA256": "036047bb4d6ba924acfae21ac7b1a2ac1a4e28593af14529b18afa0333379bb0",
+        "source_lines": [
+          254,
+          280
+        ],
+        "extracted_function_LF_SHA256": "115aeb48a72062971676e78b59c0aa2c5e285799a4d1c4f51199c2acca0b884b",
+        "function_AST_SHA256": "3bf99e62190fd1e56467039bf03931280da554198bde242e9ba3c90ef5dbfbcd"
+      },
+      {
+        "function": "_box_iou",
+        "source_file": "protocol.py",
+        "source_file_SHA256": "036047bb4d6ba924acfae21ac7b1a2ac1a4e28593af14529b18afa0333379bb0",
+        "source_lines": [
+          333,
+          338
+        ],
+        "extracted_function_LF_SHA256": "960134d54e372421f2cfc4252c5cd1f19b770a97afa84a5d8ec49ce9bc70da50",
+        "function_AST_SHA256": "074b6e9382a50c5ec94078ff1ea3ebe932ebf9184053b3b64a60d9b185cee1e9"
+      }
+    ],
+    "protocol.py": [
+      {
+        "function": "component_boxes",
+        "source_file": "wp2_protocol_v2.py",
+        "source_file_SHA256": "27c7b5b4beb99e3f882115d88aea87c404851f8a9cb94dee4bf983c827b7ea97",
+        "source_lines": [
+          25,
+          39
+        ],
+        "extracted_function_LF_SHA256": "5f110d8813724733a294f26a00b39825fadd809d34a33f219d375ce561574739",
+        "function_AST_SHA256": "8aeff6b42745466ada36da186e5cc46a90dabb59a95028b7ef0610ae4656d104"
+      },
+      {
+        "function": "convert",
+        "source_file": "wp2_protocol_v2.py",
+        "source_file_SHA256": "27c7b5b4beb99e3f882115d88aea87c404851f8a9cb94dee4bf983c827b7ea97",
+        "source_lines": [
+          41,
+          45
+        ],
+        "extracted_function_LF_SHA256": "e31878734e899acdfa7d69183dc980af1a655ffd28cc2e8764d45557376c7afb",
+        "function_AST_SHA256": "3be3823c2305fe6284fdf1cfd64162edf8bbae2ad1c31adb095676fbbd78854c"
+      },
+      {
+        "function": "checked_all",
+        "source_file": "wp2_protocol_v2.py",
+        "source_file_SHA256": "27c7b5b4beb99e3f882115d88aea87c404851f8a9cb94dee4bf983c827b7ea97",
+        "source_lines": [
+          47,
+          53
+        ],
+        "extracted_function_LF_SHA256": "84e47fee3163dfca37baac25959634845ac457cca23279bb8cf0f3e0493651e9",
+        "function_AST_SHA256": "e7bd2d17e146a29a14dbbb82897a9a5666cca7f538737b96237e865326f99bcc"
+      },
+      {
+        "function": "match_all",
+        "source_file": "wp2_protocol_v2.py",
+        "source_file_SHA256": "27c7b5b4beb99e3f882115d88aea87c404851f8a9cb94dee4bf983c827b7ea97",
+        "source_lines": [
+          55,
+          75
+        ],
+        "extracted_function_LF_SHA256": "d2076f82fcc25cb1c37927ea10dda3c507bcf23984b8ad6330cb8f6f2362798a",
+        "function_AST_SHA256": "e4ba8c2dffaf67921ec4e7c0764c2014475e1b624220756f0d0502d077df0bd9"
+      },
+      {
+        "function": "better",
+        "source_file": "wp2_protocol_v2.py",
+        "source_file_SHA256": "27c7b5b4beb99e3f882115d88aea87c404851f8a9cb94dee4bf983c827b7ea97",
+        "source_lines": [
+          77,
+          84
+        ],
+        "extracted_function_LF_SHA256": "7231565950d7f66ed677fc8bbbcc83b6cd2eac951e1391c7333410973b3bcbe7",
+        "function_AST_SHA256": "5e4321c0f10fac7d3bb86180c4955fdd5c36cd0810a5c3a02c29db312c46d566"
+      }
+    ]
+  },
+  "changes": [
+    "Extract only the used v1 geometric/GT helpers and v2 component/matching/selection functions.",
+    "Change module import wiring to a relative geometry helper; function bodies are unmodified.",
+    "Omit v1 AP-based selection, max-score CC conversion and top300 truncation; these are not the adopted four-metric protocol.",
+    "Omit COCO AP evaluator and its optional pycocotools dependency from this four-metric package.",
+    "Add portable JSON/NPY CLI and integrity checks around the unchanged numerical functions."
+  ],
+  "not_provided": [
+    "model-specific inference/preprocessing adapters",
+    "private dataset assets or absolute paths",
+    "paper-result reproduction from synthetic tests",
+    "new benchmark scores"
+  ]
+}

@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying ASTRA manuscript when using this core source."
+title: "ASTRA: Adapting Real-Time Detection Transformers to Infrared Small Targets in Remote Sensing Imagery"
+type: software
+version: 0.1.2
+authors:
+  - family-names: Ren
+    given-names: Haotian
+  - family-names: Yang
+    given-names: Yunxiu
+  - family-names: Shu
+    given-names: Qin
