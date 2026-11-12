@@ -1,24 +1,19 @@
-"""Unchanged geometric/GT helpers extracted from the recorded evaluation code.
 
-See SOURCE_PROVENANCE.json for exact source and per-function fingerprints.
-"""
+
 from collections import defaultdict
 import math
 
 SPLITS = ("train", "val", "test")
 
-
 def _np():
     import numpy as np
     return np
-
 
 def category_id(gt):
     categories = gt.get("categories", [])
     if len(categories) != 1:
         raise ValueError("This protocol requires one target category; read its id from GT")
     return categories[0]["id"]
-
 
 def _validate_gt(gt):
     cat = category_id(gt)
@@ -40,18 +35,16 @@ def _validate_gt(gt):
             annotations[annotation["image_id"]].append(annotation)
     return images, annotations
 
-
 def samples_for_split(manifest, split):
     if split not in SPLITS:
         raise ValueError(f"Invalid split: {split}")
     return [s for s in manifest["samples"] if s["split"] == split]
 
-
 def restore_probability(probability, original_size, pad_meta=None):
     from PIL import Image
     np = _np()
     prob = np.asarray(probability, dtype="float32")
-    # Accept one singleton channel/batch only; never squeeze a one-pixel image axis.
+
     while prob.ndim > 2 and prob.shape[0] == 1:
         prob = prob[0]
     if prob.ndim == 3 and prob.shape[-1] == 1:
@@ -74,7 +67,6 @@ def restore_probability(probability, original_size, pad_meta=None):
     if prob.shape != (h, w):
         prob = np.asarray(Image.fromarray(prob).resize((w, h), Image.Resampling.BILINEAR))
     return np.array(prob, dtype="float32", copy=True)
-
 
 def _box_iou(a, b):
     iw = max(0.0, min(a[0] + a[2], b[0] + b[2]) - max(a[0], b[0]))

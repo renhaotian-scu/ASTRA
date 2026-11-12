@@ -11,9 +11,11 @@
         20
       ],
       "export_file": "astra/layers.py",
-      "export_file_SHA256": "9f67126b79e4e303cf95597b62279c051cff194a2a40f8cc35cf758c7ba336a9",
-      "export_AST_SHA256": "d06324de4558a467a0a9d074a45b759875c8707967b3b45c9f74dfc84088c4e1",
-      "AST_unchanged": true
+      "export_file_SHA256": "d029ee11f82c11fb85d0478b4a0559fcb89cf9e09681b5015006fdbead9e52a2",
+      "export_AST_SHA256": "2c4c038c2e854ef4b4ea387298900bf11db52ccedfa54f7984f76365624ffe8f",
+      "AST_unchanged": false,
+      "release_comment_cleanup_executable_AST_unchanged": true,
+      "release_adaptation": "Ordinary comments and docstrings removed."
     },
     {
       "source_file": "ultralytics/nn/modules/conv.py",
@@ -25,9 +27,11 @@
         40
       ],
       "export_file": "astra/layers.py",
-      "export_file_SHA256": "9f67126b79e4e303cf95597b62279c051cff194a2a40f8cc35cf758c7ba336a9",
-      "export_AST_SHA256": "8b66cfe1d37284ea78340fabde15f20c69ded82d92536e8e57773584edacea28",
-      "AST_unchanged": true
+      "export_file_SHA256": "d029ee11f82c11fb85d0478b4a0559fcb89cf9e09681b5015006fdbead9e52a2",
+      "export_AST_SHA256": "92ee1a31b404b297088be06b5b508204449f8aba19600c7501a9bb1cdbad4211",
+      "AST_unchanged": false,
+      "release_comment_cleanup_executable_AST_unchanged": true,
+      "release_adaptation": "Ordinary comments and docstrings removed."
     },
     {
       "source_file": "ultralytics/nn/modules/conv.py",
@@ -39,9 +43,11 @@
         267
       ],
       "export_file": "astra/layers.py",
-      "export_file_SHA256": "9f67126b79e4e303cf95597b62279c051cff194a2a40f8cc35cf758c7ba336a9",
-      "export_AST_SHA256": "67b47422cc94093c3e2fad10bdcb2454a089b5e4cfed5b0d182231910d96e915",
-      "AST_unchanged": true
+      "export_file_SHA256": "d029ee11f82c11fb85d0478b4a0559fcb89cf9e09681b5015006fdbead9e52a2",
+      "export_AST_SHA256": "194383c2add20b74b0960fb39bcda331e46fd53d9d7863680bee3b91d6b39fda",
+      "AST_unchanged": false,
+      "release_comment_cleanup_executable_AST_unchanged": true,
+      "release_adaptation": "Ordinary comments and docstrings removed."
     },
     {
       "source_file": "ultralytics/nn/modules/conv.py",
@@ -53,9 +59,11 @@
         325
       ],
       "export_file": "astra/layers.py",
-      "export_file_SHA256": "9f67126b79e4e303cf95597b62279c051cff194a2a40f8cc35cf758c7ba336a9",
-      "export_AST_SHA256": "9b731001127b5f03c2e8d7c3c59d91ec6813187644d94fc478c6fb96a9fc7cd1",
-      "AST_unchanged": true
+      "export_file_SHA256": "d029ee11f82c11fb85d0478b4a0559fcb89cf9e09681b5015006fdbead9e52a2",
+      "export_AST_SHA256": "74131a644d59931800b33fb4375915d401aa7992ad0cdd8d1995fbcd3ec8fd23",
+      "AST_unchanged": false,
+      "release_comment_cleanup_executable_AST_unchanged": true,
+      "release_adaptation": "Ordinary comments and docstrings removed."
     },
     {
       "source_file": "ultralytics/nn/modules/block.py",
@@ -67,9 +75,11 @@
         256
       ],
       "export_file": "astra/layers.py",
-      "export_file_SHA256": "9f67126b79e4e303cf95597b62279c051cff194a2a40f8cc35cf758c7ba336a9",
-      "export_AST_SHA256": "39662191c11afcbe8be6a6544ef4b26d61b119565bb9a0c2c085e76c394d64e3",
-      "AST_unchanged": true
+      "export_file_SHA256": "d029ee11f82c11fb85d0478b4a0559fcb89cf9e09681b5015006fdbead9e52a2",
+      "export_AST_SHA256": "b605ca59604b666576242a84dccb16671207c867a2463695ef8e0e23b18ff8f2",
+      "AST_unchanged": false,
+      "release_comment_cleanup_executable_AST_unchanged": true,
+      "release_adaptation": "Ordinary comments and docstrings removed."
     },
     {
       "source_file": "ultralytics/nn/modules/block.py",
@@ -81,9 +91,11 @@
         370
       ],
       "export_file": "astra/layers.py",
-      "export_file_SHA256": "9f67126b79e4e303cf95597b62279c051cff194a2a40f8cc35cf758c7ba336a9",
-      "export_AST_SHA256": "7445f68d36de7e4351693bafd47f1fe643fd4bb188bc082f9fc869ce3b78fcea",
-      "AST_unchanged": true
+      "export_file_SHA256": "d029ee11f82c11fb85d0478b4a0559fcb89cf9e09681b5015006fdbead9e52a2",
+      "export_AST_SHA256": "25d714b2572fbd463f92f4051ed39b7cec3c789005b5409649feba7927435bba",
+      "AST_unchanged": false,
+      "release_comment_cleanup_executable_AST_unchanged": true,
+      "release_adaptation": "Ordinary comments and docstrings removed."
     },
     {
       "source_file": "ultralytics/nn/modules/block.py",
@@ -95,9 +107,11 @@
         390
       ],
       "export_file": "astra/layers.py",
-      "export_file_SHA256": "9f67126b79e4e303cf95597b62279c051cff194a2a40f8cc35cf758c7ba336a9",
-      "export_AST_SHA256": "42d090be9271e09e857bf2a155f95f768afb46fdf9d50b6cde0a5a6afe00625c",
-      "AST_unchanged": true
+      "export_file_SHA256": "d029ee11f82c11fb85d0478b4a0559fcb89cf9e09681b5015006fdbead9e52a2",
+      "export_AST_SHA256": "37b9f39025176592dc1164ef95da0bf0ad7884205a28a63af211def199e34235",
+      "AST_unchanged": false,
+      "release_comment_cleanup_executable_AST_unchanged": true,
+      "release_adaptation": "Ordinary comments and docstrings removed."
     },
     {
       "source_file": "ultralytics/nn/modules/block.py",
@@ -109,9 +123,10 @@
         425
       ],
       "export_file": "astra/layers.py",
-      "export_file_SHA256": "9f67126b79e4e303cf95597b62279c051cff194a2a40f8cc35cf758c7ba336a9",
+      "export_file_SHA256": "d029ee11f82c11fb85d0478b4a0559fcb89cf9e09681b5015006fdbead9e52a2",
       "export_AST_SHA256": "3935e2c5999d8e6f417bc6fc7f28f3d545c25f62c62084f27a994f870012a072",
-      "AST_unchanged": true
+      "AST_unchanged": true,
+      "release_comment_cleanup_executable_AST_unchanged": true
     },
     {
       "source_file": "ultralytics/nn/modules/block.py",
@@ -123,9 +138,10 @@
         530
       ],
       "export_file": "astra/layers.py",
-      "export_file_SHA256": "9f67126b79e4e303cf95597b62279c051cff194a2a40f8cc35cf758c7ba336a9",
+      "export_file_SHA256": "d029ee11f82c11fb85d0478b4a0559fcb89cf9e09681b5015006fdbead9e52a2",
       "export_AST_SHA256": "8c4b20d489512e0eefe5ee5805a079a0dfb22cfa4b428ff7e43d2b9b4cc02f57",
-      "AST_unchanged": true
+      "AST_unchanged": true,
+      "release_comment_cleanup_executable_AST_unchanged": true
     },
     {
       "source_file": "ultralytics/nn/modules/utils.py",
@@ -137,9 +153,11 @@
         18
       ],
       "export_file": "astra/transformer.py",
-      "export_file_SHA256": "b7708e3f5da518795f55c9c598bd3a674b681fce70d68d80e8d00e637004a024",
-      "export_AST_SHA256": "1cff012f1ae3fafea94ebb3b4f56dbe9837c288afe47e41572285349ea660393",
-      "AST_unchanged": true
+      "export_file_SHA256": "d9ab898c9be35a4a5bb2ba7bb665fb400cca7f3b08b26dc96fa6c9fe21e9503d",
+      "export_AST_SHA256": "c7dec4f200a56752374b71367afea8cca8bad0d905e752fb392d1300cd7f7925",
+      "AST_unchanged": false,
+      "release_comment_cleanup_executable_AST_unchanged": true,
+      "release_adaptation": "Ordinary comments and docstrings removed."
     },
     {
       "source_file": "ultralytics/nn/modules/utils.py",
@@ -151,9 +169,11 @@
         23
       ],
       "export_file": "astra/transformer.py",
-      "export_file_SHA256": "b7708e3f5da518795f55c9c598bd3a674b681fce70d68d80e8d00e637004a024",
-      "export_AST_SHA256": "943e57f404bebe10e1118cccdd4b6c8d2c592c601be62cca5cba664eea1e847b",
-      "AST_unchanged": true
+      "export_file_SHA256": "d9ab898c9be35a4a5bb2ba7bb665fb400cca7f3b08b26dc96fa6c9fe21e9503d",
+      "export_AST_SHA256": "4aeaaf0f4b1ea92d089deec2d624eb1a3c89fd6c30d7d5143adf742744880965",
+      "AST_unchanged": false,
+      "release_comment_cleanup_executable_AST_unchanged": true,
+      "release_adaptation": "Ordinary comments and docstrings removed."
     },
     {
       "source_file": "ultralytics/nn/modules/utils.py",
@@ -165,9 +185,11 @@
         31
       ],
       "export_file": "astra/transformer.py",
-      "export_file_SHA256": "b7708e3f5da518795f55c9c598bd3a674b681fce70d68d80e8d00e637004a024",
-      "export_AST_SHA256": "d9febe01d456644b71d441024b552258bb924deff848dd2d76cd3fa7fc25994a",
-      "AST_unchanged": true
+      "export_file_SHA256": "d9ab898c9be35a4a5bb2ba7bb665fb400cca7f3b08b26dc96fa6c9fe21e9503d",
+      "export_AST_SHA256": "d0f37eaef9c422c0e11f297474d70164f8751ec47fcd6b15b10d8440d3356b36",
+      "AST_unchanged": false,
+      "release_comment_cleanup_executable_AST_unchanged": true,
+      "release_adaptation": "Ordinary comments and docstrings removed."
     },
     {
       "source_file": "ultralytics/nn/modules/utils.py",
@@ -179,9 +201,11 @@
         39
       ],
       "export_file": "astra/transformer.py",
-      "export_file_SHA256": "b7708e3f5da518795f55c9c598bd3a674b681fce70d68d80e8d00e637004a024",
-      "export_AST_SHA256": "4ea1f320c603e460b1e850b46e9d476cd28c1fff838f4374b6490d1186f789c7",
-      "AST_unchanged": true
+      "export_file_SHA256": "d9ab898c9be35a4a5bb2ba7bb665fb400cca7f3b08b26dc96fa6c9fe21e9503d",
+      "export_AST_SHA256": "46c5d50d4c44da0ff1236c39990d98b5c30231599965033a1c44b7c765ef2e83",
+      "AST_unchanged": false,
+      "release_comment_cleanup_executable_AST_unchanged": true,
+      "release_adaptation": "Ordinary comments and docstrings removed."
     },
     {
       "source_file": "ultralytics/nn/modules/utils.py",
@@ -193,9 +217,11 @@
         80
       ],
       "export_file": "astra/transformer.py",
-      "export_file_SHA256": "b7708e3f5da518795f55c9c598bd3a674b681fce70d68d80e8d00e637004a024",
-      "export_AST_SHA256": "65fd747baeb5425ef5787a37ea27522c63419bc0f5228260d21ab305b876ef72",
-      "AST_unchanged": true
+      "export_file_SHA256": "d9ab898c9be35a4a5bb2ba7bb665fb400cca7f3b08b26dc96fa6c9fe21e9503d",
+      "export_AST_SHA256": "03ee5d618fc80813e10a476a0890e4ffc29588be4b3a51117d6330de4e79e5ac",
+      "AST_unchanged": false,
+      "release_comment_cleanup_executable_AST_unchanged": true,
+      "release_adaptation": "Ordinary comments and docstrings removed."
     },
     {
       "source_file": "ultralytics/nn/modules/transformer.py",
@@ -207,11 +233,12 @@
         71
       ],
       "export_file": "astra/transformer.py",
-      "export_file_SHA256": "b7708e3f5da518795f55c9c598bd3a674b681fce70d68d80e8d00e637004a024",
-      "export_AST_SHA256": "8aa797086d237514b78bf56869cdaf476d84da2949fcc1c2e936c441d61507cc",
+      "export_file_SHA256": "d9ab898c9be35a4a5bb2ba7bb665fb400cca7f3b08b26dc96fa6c9fe21e9503d",
+      "export_AST_SHA256": "de80ad116ea315033b66199af84b996a929da8b2d5075c7e1d59a9baf8797a34",
       "AST_unchanged": false,
       "adaptation": "Only package-local compatibility/denoising import path was adapted.",
-      "release_adaptation": "Explicit inference-only forward; training integration deferred."
+      "release_adaptation": "Explicit inference-only forward; training integration deferred.",
+      "release_comment_cleanup_executable_AST_unchanged": true
     },
     {
       "source_file": "ultralytics/nn/modules/transformer.py",
@@ -223,9 +250,11 @@
         104
       ],
       "export_file": "astra/transformer.py",
-      "export_file_SHA256": "b7708e3f5da518795f55c9c598bd3a674b681fce70d68d80e8d00e637004a024",
-      "export_AST_SHA256": "339a88cb14873339dcc90e3cf8dc81c8a533840e0b19a3e4aac41cec7a613139",
-      "AST_unchanged": true
+      "export_file_SHA256": "d9ab898c9be35a4a5bb2ba7bb665fb400cca7f3b08b26dc96fa6c9fe21e9503d",
+      "export_AST_SHA256": "1956daca574887602089071bd7be5ac85917201e34313b4d87b20243647679e7",
+      "AST_unchanged": false,
+      "release_comment_cleanup_executable_AST_unchanged": true,
+      "release_adaptation": "Ordinary comments and docstrings removed."
     },
     {
       "source_file": "ultralytics/nn/modules/transformer.py",
@@ -237,9 +266,11 @@
         176
       ],
       "export_file": "astra/transformer.py",
-      "export_file_SHA256": "b7708e3f5da518795f55c9c598bd3a674b681fce70d68d80e8d00e637004a024",
-      "export_AST_SHA256": "f29f797964938c52a4570e178021946aba9e90961cbcab3b42a05bd67db7fb1b",
-      "AST_unchanged": true
+      "export_file_SHA256": "d9ab898c9be35a4a5bb2ba7bb665fb400cca7f3b08b26dc96fa6c9fe21e9503d",
+      "export_AST_SHA256": "a89a5c82973c2f6212c3423f440767cb378299ac239f5a5332e8105b60ec590f",
+      "AST_unchanged": false,
+      "release_comment_cleanup_executable_AST_unchanged": true,
+      "release_adaptation": "Ordinary comments and docstrings removed."
     },
     {
       "source_file": "ultralytics/nn/modules/transformer.py",
@@ -251,9 +282,11 @@
         292
       ],
       "export_file": "astra/transformer.py",
-      "export_file_SHA256": "b7708e3f5da518795f55c9c598bd3a674b681fce70d68d80e8d00e637004a024",
-      "export_AST_SHA256": "b4413da0fac5b7ed9af1803a9a228acf0229787a17e3501bf73e7ff3db5bea9b",
-      "AST_unchanged": true
+      "export_file_SHA256": "d9ab898c9be35a4a5bb2ba7bb665fb400cca7f3b08b26dc96fa6c9fe21e9503d",
+      "export_AST_SHA256": "a628dff60c6284942527af1dc697d20f1190d98e7750a6aa90850135828ea11f",
+      "AST_unchanged": false,
+      "release_comment_cleanup_executable_AST_unchanged": true,
+      "release_adaptation": "Ordinary comments and docstrings removed."
     },
     {
       "source_file": "ultralytics/nn/modules/transformer.py",
@@ -265,9 +298,11 @@
         353
       ],
       "export_file": "astra/transformer.py",
-      "export_file_SHA256": "b7708e3f5da518795f55c9c598bd3a674b681fce70d68d80e8d00e637004a024",
-      "export_AST_SHA256": "731595016485df16438508c9eceb0fe3fc5b06c41512323ce2a6e28c2627aafa",
-      "AST_unchanged": true
+      "export_file_SHA256": "d9ab898c9be35a4a5bb2ba7bb665fb400cca7f3b08b26dc96fa6c9fe21e9503d",
+      "export_AST_SHA256": "349a6e44bdf53e7e6ef57d8d752b22e28e899550cd1a71fd098ddb1f7111d85d",
+      "AST_unchanged": false,
+      "release_comment_cleanup_executable_AST_unchanged": true,
+      "release_adaptation": "Ordinary comments and docstrings removed."
     },
     {
       "source_file": "ultralytics/nn/modules/transformer.py",
@@ -279,9 +314,11 @@
         439
       ],
       "export_file": "astra/transformer.py",
-      "export_file_SHA256": "b7708e3f5da518795f55c9c598bd3a674b681fce70d68d80e8d00e637004a024",
-      "export_AST_SHA256": "ed25b8e7e3f1a78d43adc9250a05f83cf222d3e6df1cd7f72e9379d823cdf91b",
-      "AST_unchanged": true
+      "export_file_SHA256": "d9ab898c9be35a4a5bb2ba7bb665fb400cca7f3b08b26dc96fa6c9fe21e9503d",
+      "export_AST_SHA256": "be51e6d097d7828b99aa9e342db2c9ee54f7848e2973ec31aa1ad9ed15eb2d53",
+      "AST_unchanged": false,
+      "release_comment_cleanup_executable_AST_unchanged": true,
+      "release_adaptation": "Ordinary comments and docstrings removed."
     },
     {
       "source_file": "ultralytics/nn/extra_modules/attention.py",
@@ -293,9 +330,11 @@
         1659
       ],
       "export_file": "astra/attention.py",
-      "export_file_SHA256": "c42a8e581df6a379be3010421c3c9631fcb682e093e84b693ae0f7f047d6425d",
-      "export_AST_SHA256": "cc9471e8a290b7c0ced5d96e4317fc971a33dc3526ef5c4433e5b18e257e14b1",
-      "AST_unchanged": true
+      "export_file_SHA256": "000926e0a384d4c0a64c0a735105d4a2f889057463c7242a83cc35f9b433f7fa",
+      "export_AST_SHA256": "7f583236d654d46f27ec78e8fe01dad5de81dc11dda2920a3c573d764179bcf6",
+      "AST_unchanged": false,
+      "release_comment_cleanup_executable_AST_unchanged": true,
+      "release_adaptation": "Ordinary comments and docstrings removed."
     },
     {
       "source_file": "ultralytics/nn/extra_modules/transformer.py",
@@ -307,9 +346,11 @@
         66
       ],
       "export_file": "astra/attention.py",
-      "export_file_SHA256": "c42a8e581df6a379be3010421c3c9631fcb682e093e84b693ae0f7f047d6425d",
-      "export_AST_SHA256": "a3e7632b2f701f5044de8af1ad0e5baed2408b60a4bd0d8414a6834b5341cfda",
-      "AST_unchanged": true
+      "export_file_SHA256": "000926e0a384d4c0a64c0a735105d4a2f889057463c7242a83cc35f9b433f7fa",
+      "export_AST_SHA256": "57039e618bec4509af1599ba683ab24c70862fc29b3ef471c608206a36cbff36",
+      "AST_unchanged": false,
+      "release_comment_cleanup_executable_AST_unchanged": true,
+      "release_adaptation": "Ordinary comments and docstrings removed."
     },
     {
       "source_file": "ultralytics/nn/extra_modules/transformer.py",
@@ -321,9 +362,11 @@
         394
       ],
       "export_file": "astra/attention.py",
-      "export_file_SHA256": "c42a8e581df6a379be3010421c3c9631fcb682e093e84b693ae0f7f047d6425d",
-      "export_AST_SHA256": "71fa756cae189e6f34196fc7bb39fc987c69bafe53a7b46187b1c19e52b4d6e3",
-      "AST_unchanged": true
+      "export_file_SHA256": "000926e0a384d4c0a64c0a735105d4a2f889057463c7242a83cc35f9b433f7fa",
+      "export_AST_SHA256": "aa044fe9f07acb93d03c7d1cef79dfff0c9dcb8c7fe30ba83f5457c6e66be644",
+      "AST_unchanged": false,
+      "release_comment_cleanup_executable_AST_unchanged": true,
+      "release_adaptation": "Ordinary comments and docstrings removed."
     },
     {
       "source_file": "ultralytics/nn/extra_modules/fadc.py",
@@ -335,9 +378,10 @@
         97
       ],
       "export_file": "astra/sampling.py",
-      "export_file_SHA256": "89636152ab67ebb57c092f2e3a462f401f24d64a1c0e366c5f2351fe7cb4e90a",
+      "export_file_SHA256": "572680ebaae5e705a2c7fb7a7fc814466e474da0caf58c4e5299f7a191e3766d",
       "export_AST_SHA256": "ecae9435b0e03ae0ed23b519927e761b013b7d0bab1bb11e87578af694aff09d",
-      "AST_unchanged": true
+      "AST_unchanged": true,
+      "release_comment_cleanup_executable_AST_unchanged": true
     },
     {
       "source_file": "ultralytics/nn/extra_modules/fadc.py",
@@ -349,9 +393,10 @@
         122
       ],
       "export_file": "astra/sampling.py",
-      "export_file_SHA256": "89636152ab67ebb57c092f2e3a462f401f24d64a1c0e366c5f2351fe7cb4e90a",
+      "export_file_SHA256": "572680ebaae5e705a2c7fb7a7fc814466e474da0caf58c4e5299f7a191e3766d",
       "export_AST_SHA256": "31968d5b699c640a682a6124de3595b286cdf9ac301dcf34c220d64b41ec1ed1",
-      "AST_unchanged": true
+      "AST_unchanged": true,
+      "release_comment_cleanup_executable_AST_unchanged": true
     },
     {
       "source_file": "ultralytics/nn/extra_modules/fadc.py",
@@ -363,9 +408,11 @@
         312
       ],
       "export_file": "astra/sampling.py",
-      "export_file_SHA256": "89636152ab67ebb57c092f2e3a462f401f24d64a1c0e366c5f2351fe7cb4e90a",
-      "export_AST_SHA256": "c7198af48ac4492f85165765bfd3cce5e8c30af194253914a9b44e8d17e34015",
-      "AST_unchanged": true
+      "export_file_SHA256": "572680ebaae5e705a2c7fb7a7fc814466e474da0caf58c4e5299f7a191e3766d",
+      "export_AST_SHA256": "74a6b6ed4a1b247c9493b419c93af78b0b252e1abe92c2e00594e5e52de7822a",
+      "AST_unchanged": false,
+      "release_comment_cleanup_executable_AST_unchanged": true,
+      "release_adaptation": "Ordinary comments and docstrings removed."
     },
     {
       "source_file": "ultralytics/nn/extra_modules/fadc.py",
@@ -377,9 +424,11 @@
         584
       ],
       "export_file": "astra/sampling.py",
-      "export_file_SHA256": "89636152ab67ebb57c092f2e3a462f401f24d64a1c0e366c5f2351fe7cb4e90a",
-      "export_AST_SHA256": "40d1dc34225c84be588e500e136f4ab0b508b6f742ab4a1ab7e1e80fbcd551fb",
-      "AST_unchanged": true
+      "export_file_SHA256": "572680ebaae5e705a2c7fb7a7fc814466e474da0caf58c4e5299f7a191e3766d",
+      "export_AST_SHA256": "23acd984c2d813c38f9989c11ab6fcdbeae30793d54e9b8249ff6944bf0bd334",
+      "AST_unchanged": false,
+      "release_comment_cleanup_executable_AST_unchanged": true,
+      "release_adaptation": "Ordinary comments and docstrings removed."
     },
     {
       "source_file": "ultralytics/nn/extra_modules/block.py",
@@ -391,9 +440,10 @@
         4705
       ],
       "export_file": "astra/backbone.py",
-      "export_file_SHA256": "f952983041feac99e18ce20997af30c91bdc82b83b12d7e7bbf5f5a513928b57",
+      "export_file_SHA256": "16f2e99698e37c38300101a03ebea28a5e6f3849bed183e67ee43aee9706c951",
       "export_AST_SHA256": "644cf24ab785a3d62189d0650709f3a1811d66d862c339b0460ded630b92f299",
-      "AST_unchanged": true
+      "AST_unchanged": true,
+      "release_comment_cleanup_executable_AST_unchanged": true
     },
     {
       "source_file": "ultralytics/nn/modules/head.py",
@@ -405,11 +455,12 @@
         416
       ],
       "export_file": "astra/decoder.py",
-      "export_file_SHA256": "f7d907d2899a1a8f6c3269db8fc059597ae8bdcb4ed63d2cd4d308a90c594919",
-      "export_AST_SHA256": "17deaf89203e97a24f3afa0355fb7358f1dcfdbd3dacf876d61fec4bf5cd22b9",
+      "export_file_SHA256": "2face78036d25e7b57fc2ea294f29ad87fd0d0567c36edb9ab0908d7a666084c",
+      "export_AST_SHA256": "0eb42635a3acfe2844af65d4106744a0f8fe52f6474a75cc28d763d95c244d64",
       "AST_unchanged": false,
       "adaptation": "Only package-local compatibility/denoising import path was adapted.",
-      "release_adaptation": "Explicit inference-only forward; training integration deferred."
+      "release_adaptation": "Explicit inference-only forward; training integration deferred.",
+      "release_comment_cleanup_executable_AST_unchanged": true
     },
     {
       "source_file": "ultralytics/nn/modules/head.py",
@@ -421,9 +472,11 @@
         470
       ],
       "export_file": "astra/decoder.py",
-      "export_file_SHA256": "f7d907d2899a1a8f6c3269db8fc059597ae8bdcb4ed63d2cd4d308a90c594919",
-      "export_AST_SHA256": "e1e3a587e1b350c817edc6767e23863a8d50e5a7214a402d8f8717192ff73f1e",
-      "AST_unchanged": true
+      "export_file_SHA256": "2face78036d25e7b57fc2ea294f29ad87fd0d0567c36edb9ab0908d7a666084c",
+      "export_AST_SHA256": "14741fce5fd0300dbe0f36abb892c42c7fe05fc498dc5d0677d8bdaff1db16a1",
+      "AST_unchanged": false,
+      "release_comment_cleanup_executable_AST_unchanged": true,
+      "release_adaptation": "Ordinary comments and docstrings removed."
     }
   ]
 }

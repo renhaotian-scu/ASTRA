@@ -1,10 +1,9 @@
-"""Real core-model and sampling checks; synthetic inputs do not measure accuracy."""
+
 import unittest
 import torch
 from torch.nn import functional as F
 from astra import build_astra
 from astra.deform_backend import modulated_deform_conv2d_reference as deform
-
 
 class SamplingTests(unittest.TestCase):
     def setUp(self):
@@ -28,7 +27,7 @@ class SamplingTests(unittest.TestCase):
         offset[:, 1] = .25
         y = deform(x, offset, torch.ones(1, 1, 2, 2, dtype=torch.double),
                    torch.ones(1, 1, 1, 1, dtype=torch.double), None, 1, 0, 1)
-        # Pixel-center sampling at (dy=.5,dx=.25), with samples outside set to zero.
+
         expected = torch.tensor([[[[2.25, 2.25], [1.625, 1.5]]]], dtype=torch.double)
         torch.testing.assert_close(y, expected, atol=1e-12, rtol=1e-12)
 
@@ -50,7 +49,6 @@ class SamplingTests(unittest.TestCase):
             lambda xx, oo, mm, ww: deform(xx, oo, mm, ww, None, 1, 0, 1),
             (x, offset, mask, w), eps=1e-6, atol=1e-5, rtol=1e-3))
 
-
 class ModelTests(unittest.TestCase):
     def setUp(self):
         torch.manual_seed(7)
@@ -70,12 +68,10 @@ class ModelTests(unittest.TestCase):
         self.assertTrue(bool(torch.isfinite(y).all()))
         torch.testing.assert_close(y, z, atol=0, rtol=0)
 
-
     def test_input_constraints_fail_with_a_clear_error(self):
         model = build_astra(backend="pytorch").eval()
         with self.assertRaisesRegex(ValueError, "divisible by 64"):
             model(torch.zeros(1, 3, 128, 160))
-
 
 if __name__ == "__main__":
     unittest.main()

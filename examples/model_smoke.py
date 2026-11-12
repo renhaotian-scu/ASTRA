@@ -1,9 +1,8 @@
-"""Exercise the real core graph and auxiliary-pruned deployment conversion."""
+
 import argparse
 import json
 import torch
 from astra import build_astra, check_deform_backend
-
 
 def main():
     p = argparse.ArgumentParser()
@@ -29,7 +28,6 @@ def main():
         'deployment_graph_parameters': sum(v.numel() for v in deployed.parameters()),
         'max_eval_deploy_difference': error,
         'scope': 'Random untrained weights; not paper accuracy or historical checkpoint parity'}, indent=2))
-
 
 if __name__ == '__main__':
     main()

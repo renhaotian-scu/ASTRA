@@ -1,10 +1,9 @@
-"""Create a tiny protocol demonstration. These are not benchmark predictions."""
+
 import argparse
 import json
 from pathlib import Path
 
 import numpy as np
-
 
 def create_example(directory):
     directory = Path(directory)
@@ -45,14 +44,12 @@ def create_example(directory):
         (directory / filename).write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8")
     return directory
 
-
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     create_example(args.output)
     print("Synthetic fixture created; no paper scores are reproduced.")
-
 
 if __name__ == "__main__":
     main()

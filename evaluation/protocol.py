@@ -1,8 +1,5 @@
-"""Recorded WP2-v2 four-metric functions, extracted without algorithm changes.
 
-All component boxes contribute. Mean foreground probability orders matching;
-there is no second confidence filter, top-K truncation, area filter, or AP.
-"""
+
 from collections import defaultdict
 import math
 import numpy as np
@@ -11,7 +8,6 @@ from . import geometry as original
 
 MASK_GRID = (.1, .2, .3, .5, .7, .9)
 PROTOCOL = {'version': 'WP2_mask_to_box_v2', 'mask_grid': [0.1, 0.2, 0.3, 0.5, 0.7, 0.9], 'binary_test': 'probability >= mask_threshold', 'component': '8-connected; no morphology, component-area filter, manual splitting or merging', 'score': 'float64 arithmetic mean of original restored float32 probabilities at actual labeled CC foreground pixels; not bbox pixels', 'box': 'tight raster support xywh, x/y plus frozen dataset offset; extent=max-min+1', 'operating_point': 'all CC boxes, score ordered one-to-one IoU>=.5; no confidence threshold or top-K cut', 'selection': 'maximum VAL Box-F1, tie lower VAL Fa per all images, remaining tie lower mask; tolerance1e-12', 'public_scope': 'P, Pd=Recall, F1 in percent; Fa=FP/all images; no AP or model inference', 'ASTRA_working_point': 'retain its original VAL-selected native query confidence; do not count all queries as detections'}
-
 
 def component_boxes(probability,image_id,original_size,mask_threshold,category_id,xy_offset=(0,0)):
  if not 0<mask_threshold<=1:raise ValueError('Invalid threshold')
@@ -29,13 +25,11 @@ def component_boxes(probability,image_id,original_size,mask_threshold,category_i
    'score':float(means[k]),'component_id':k+1,'component_area_pixels':int(areas[k]),'component_max_probability':float(maxima[k])})
  return sorted(detections,key=lambda d:-d['score'])
 
-
 def convert(manifest,split,maps,mask):
  samples=original.samples_for_split(manifest,split)
  if set(maps)!={s['sample_id'] for s in samples}:raise ValueError('Exact split maps required')
  offset=manifest.get('mask_box_xy_offset',[0,0]);category=original.category_id({'categories':manifest['categories']})
  return [d for s in samples for d in component_boxes(maps[s['sample_id']],s['image_id'],(s['height'],s['width']),mask,category,offset)]
-
 
 def checked_all(gt,dets):
  images,annotations=original._validate_gt(gt);category=original.category_id(gt);grouped=defaultdict(list)
@@ -44,7 +38,6 @@ def checked_all(gt,dets):
   if len(d['bbox'])!=4 or min(d['bbox'][2:])<=0 or not all(math.isfinite(float(v)) for v in [*d['bbox'],d['score']]) or not 0<=d['score']<=1:raise ValueError('Invalid box/score')
   grouped[d['image_id']].append(d)
  return images,annotations,{iid:sorted(grouped.get(iid,[]),key=lambda d:-d['score']) for iid in images}
-
 
 def match_all(gt,dets):
  images,annotations,by_image=checked_all(gt,dets);tp=fp=fn=0;records=[]
@@ -67,7 +60,6 @@ def match_all(gt,dets):
  p=tp/(tp+fp) if tp+fp else 0.;r=tp/(tp+fn) if tp+fn else 0.
  return {'TP':tp,'FP':fp,'FN':fn,'P':100*p,'R':100*r,'F1':200*p*r/(p+r) if p+r else 0.,
    'Fa_per_image':fp/len(images) if images else 0.,'images':len(images),'targets':tp+fn},records
-
 
 def better(candidate,current):
  if current is None:return True

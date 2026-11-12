@@ -1,33 +1,12 @@
 # SPDX-License-Identifier: AGPL-3.0-only
-# Ultralytics-derived integration; see THIRD_PARTY_NOTICES.md.
-"""MARS reference-prior and geometric distance primitives.
 
-Complete assignment/regression training integration follows after acceptance.
-"""
 import math
 import torch
 from torch import nn
 from torch.nn import functional as F
 
 def bbox_iou(box1, box2, xywh=True, GIoU=False, DIoU=False, CIoU=False, EIoU=False, SIoU=False, ShapeIoU=False, PIoU=False, PIoU2=False, eps=1e-07, scale=0.0, Lambda=1.3):
-    """
-    Calculate Intersection over Union (IoU) of box1(1, 4) to box2(n, 4).
 
-    Args:
-        box1 (torch.Tensor): A tensor representing a single bounding box with shape (1, 4).
-        box2 (torch.Tensor): A tensor representing n bounding boxes with shape (n, 4).
-        xywh (bool, optional): If True, input boxes are in (x, y, w, h) format. If False, input boxes are in
-                               (x1, y1, x2, y2) format. Defaults to True.
-        GIoU (bool, optional): If True, calculate Generalized IoU. Defaults to False.
-        DIoU (bool, optional): If True, calculate Distance IoU. Defaults to False.
-        CIoU (bool, optional): If True, calculate Complete IoU. Defaults to False.
-        EIoU (bool, optional): If True, calculate Efficient IoU. Defaults to False.
-        SIoU (bool, optional): If True, calculate Scylla IoU. Defaults to False.
-        eps (float, optional): A small value to avoid division by zero. Defaults to 1e-7.
-
-    Returns:
-        (torch.Tensor): IoU, GIoU, DIoU, or CIoU values depending on the specified flags.
-    """
     if xywh:
         (x1, y1, w1, h1), (x2, y2, w2, h2) = (box1.chunk(4, -1), box2.chunk(4, -1))
         w1_, h1_, w2_, h2_ = (w1 / 2, h1 / 2, w2 / 2, h2 / 2)
@@ -108,18 +87,7 @@ def bbox_iou(box1, box2, xywh=True, GIoU=False, DIoU=False, CIoU=False, EIoU=Fal
     return iou
 
 def wasserstein_loss(box1, box2, xywh=True, eps=1e-07, constant=12.8):
-    """`Implementation of paper `Enhancing Geometric Factors into
-    Model Learning and Inference for Object Detection and Instance
-    Segmentation <https://arxiv.org/abs/2005.03572>`_.
-    Code is modified from https://github.com/Zzh-tju/CIoU.
-    Args:
-        pred (Tensor): Predicted bboxes of format (x_min, y_min, x_max, y_max),
-            shape (n, 4).
-        target (Tensor): Corresponding gt bboxes, shape (n, 4).
-        eps (float): Eps to avoid log(0).
-    Return:
-        Tensor: Loss tensor.
-    """
+
     if xywh:
         (x1, y1, w1, h1), (x2, y2, w2, h2) = (box1.chunk(4, -1), box2.chunk(4, -1))
         w1, h1, w2, h2 = (w1 / 2, h1 / 2, w2 / 2, h2 / 2)
@@ -137,19 +105,12 @@ def wasserstein_loss(box1, box2, xywh=True, eps=1e-07, constant=12.8):
     wasserstein_2 = center_distance + wh_distance
     return torch.exp(-torch.sqrt(wasserstein_2) / constant)
 
-
-
 legacy_exact = wasserstein_loss
 
 def stride_aligned_reference_priors(shapes, *, anchor_scale=1.0,
                                     grid_size=None, dtype=torch.float32,
                                     device='cpu', eps=1e-3):
-    """Return prior logits and validity mask using the decoder's exact grid rule.
 
-    ``shapes`` contains (height,width) for each encoder scale. ``grid_size=None``
-    uses width=1/W and height=1/H; these are initialization priors, not fixed
-    prediction boxes. A non-square input keeps x/W and y/H separately.
-    """
     anchors=[]
     for i,(h,w) in enumerate(shapes):
         sy=torch.arange(end=h,dtype=dtype,device=device)

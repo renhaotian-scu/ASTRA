@@ -1,4 +1,4 @@
-"""Portable JSON/NPY I/O around the unchanged WP2-v2 numerical functions."""
+
 import argparse
 import hashlib
 import json
@@ -9,12 +9,10 @@ import numpy as np
 from . import geometry
 from .protocol import MASK_GRID, PROTOCOL, better, convert, match_all
 
-
 def json_hash(value):
     return hashlib.sha256(json.dumps(
         value, sort_keys=True, ensure_ascii=False, separators=(",", ":")
     ).encode("utf-8")).hexdigest()
-
 
 def file_hash(path):
     digest = hashlib.sha256()
@@ -23,13 +21,11 @@ def file_hash(path):
             digest.update(chunk)
     return digest.hexdigest()
 
-
 def read_json(path):
     return json.loads(Path(path).read_text(encoding="utf-8"))
 
-
 def relative_asset(root, value):
-    """Portable inputs use paths relative to their JSON, within that directory."""
+
     if not isinstance(value, str) or Path(value).is_absolute():
         raise ValueError("Asset paths must be relative to the input JSON")
     root = Path(root).resolve()
@@ -39,7 +35,6 @@ def relative_asset(root, value):
     except ValueError:
         raise ValueError("Asset path escapes the input JSON directory")
     return target
-
 
 def load_manifest(path):
     path = Path(path)
@@ -68,11 +63,10 @@ def load_manifest(path):
         raise ValueError("Declare a finite, fixed [dx,dy] annotation offset")
     gt_paths = {split: relative_asset(path.parent, manifest["splits"][split]["gt_json"])
                 for split in ("val", "test")}
-    # Hash test annotations for split identity, without using them for selection.
+
     identity = {"manifest_sha256": file_hash(path),
                 "GT_sha256": {split: file_hash(p) for split, p in gt_paths.items()}}
     return manifest, gt_paths, identity
-
 
 def load_gt(manifest, path, split):
     gt = read_json(path)
@@ -87,7 +81,6 @@ def load_gt(manifest, path, split):
         if (sample["height"], sample["width"]) != (image["height"], image["width"]):
             raise ValueError("Manifest and GT original image dimensions differ")
     return gt
-
 
 def load_maps(path, manifest, split):
     path = Path(path)
@@ -121,9 +114,8 @@ def load_maps(path, manifest, split):
     return maps, {"prediction_set_id": prediction_id,
                   "checkpoint_sha256": checkpoint, "map_SHA256": hashes}
 
-
 def select_validation(manifest, gt, maps):
-    """The recorded six-entry grid, F1/Fa/mask tie rules; val data only."""
+
     selected, candidates = None, []
     for threshold in MASK_GRID:
         boxes = convert(manifest, "val", maps, threshold)
@@ -134,7 +126,6 @@ def select_validation(manifest, gt, maps):
             selected = row
     return selected, candidates
 
-
 def freeze_selection(selected, identity, map_identity):
     frozen = {"protocol": PROTOCOL["version"], "protocol_sha256": json_hash(PROTOCOL),
               "selected_on": "val", "mask_threshold": selected["mask_threshold"],
@@ -143,7 +134,6 @@ def freeze_selection(selected, identity, map_identity):
               "VAL_metrics": selected["metrics"], **identity, **map_identity}
     frozen["selection_sha256"] = json_hash(frozen)
     return frozen
-
 
 def verify_selection(frozen, identity):
     unsigned = {k: v for k, v in frozen.items() if k != "selection_sha256"}
@@ -159,7 +149,6 @@ def verify_selection(frozen, identity):
     if any(frozen.get(k) != v for k, v in identity.items()):
         raise ValueError("Manifest/GT identity differs from validation selection")
 
-
 def write_outputs(directory, values):
     directory = Path(directory)
     if directory.exists() and any(directory.iterdir()):
@@ -169,7 +158,6 @@ def write_outputs(directory, values):
         with (directory / name).open("x", encoding="utf-8", newline="\n") as stream:
             json.dump(value, stream, ensure_ascii=False, indent=2, allow_nan=False)
             stream.write("\n")
-
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)

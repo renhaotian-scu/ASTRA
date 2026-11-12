@@ -1,13 +1,5 @@
 # SPDX-License-Identifier: AGPL-3.0-only
-# Ultralytics-derived integration; see THIRD_PARTY_NOTICES.md.
-"""TGMS fusion, auxiliary response heads and box-derived Gaussian supervision.
 
-Gaussian widths and ``min_sigma`` are measured in feature-grid cells. Targets
-overlap through pixelwise maximum. Response logits are produced only in train
-mode; auxiliary fusion nodes are removed only by the explicit deployment graph.
-The source module defaults are exposed for algorithm inspection, not a complete
-training recipe or a claim to reproduce every historical checkpoint.
-"""
 import torch
 from torch import nn
 from torch.nn import functional as F
@@ -48,10 +40,6 @@ class MFM(nn.Module):
         return out
 
 class RTDETRDenseAuxHead(nn.Module):
-    """
-    只做 Target-Mask 辅助监督。
-    不再输出 Dense BBox，不再继承 Detect。
-    """
 
     def __init__(self, nc=80, hd=256, strides=[4, 8, 16], ch=()):
         super().__init__()
@@ -68,6 +56,5 @@ class RTDETRDenseAuxHead(nn.Module):
         else:
             self.aux_mask_preds = None
         return x
-
 
 TGMSHead = RTDETRDenseAuxHead

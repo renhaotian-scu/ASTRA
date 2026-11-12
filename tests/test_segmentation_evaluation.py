@@ -1,4 +1,4 @@
-"""Synthetic protocol fixtures; these tests do not reproduce paper scores."""
+
 import copy
 import hashlib
 import inspect
@@ -16,7 +16,6 @@ from evaluation.cli import (
 )
 from evaluation.make_synthetic_example import create_example
 
-
 def gt(boxes, n_images=1):
     return {"images": [{"id": i + 1, "width": 64, "height": 64}
                        for i in range(n_images)],
@@ -24,10 +23,8 @@ def gt(boxes, n_images=1):
             "annotations": [{"id": i + 1, "image_id": 1, "category_id": 0,
                              "bbox": box} for i, box in enumerate(boxes)]}
 
-
 def det(box, score, image_id=1):
     return {"image_id": image_id, "category_id": 0, "bbox": box, "score": score}
-
 
 class TestSegmentationEvaluation(unittest.TestCase):
     def setUp(self):
@@ -47,11 +44,11 @@ class TestSegmentationEvaluation(unittest.TestCase):
         prob = np.zeros((3, 3), dtype=np.float32)
         prob[0, 0], prob[1, 1] = .8, .6
         boxes = protocol.component_boxes(prob, 1, (3, 3), .5, 0)
-        assert len(boxes) == 1  # diagonally adjacent foreground belongs to one component
+        assert len(boxes) == 1
         assert boxes[0]["bbox"] == [0., 0., 2., 2.]
         assert boxes[0]["component_area_pixels"] == 2
         self.assertAlmostEqual(boxes[0]["score"], .7, places=6)
-        # Mean is over the two foreground pixels, not all four bbox pixels or the maximum.
+
         self.assertAlmostEqual(boxes[0]["component_max_probability"], .8, places=6)
 
     def test_single_pixel_no_area_filter_inclusive_threshold_and_frozen_offset(self):
@@ -73,12 +70,12 @@ class TestSegmentationEvaluation(unittest.TestCase):
 
     def test_score_ordered_greedy_is_not_replaced_with_optimal_assignment(self):
         truth = gt([[0, 0, 10, 10], [4, 0, 10, 10]])
-        # First box could match either GT, but greedily chooses GT1. The next can only match GT1.
+
         boxes = [det([1, 0, 10, 10], .9), det([0, 0, 8, 10], .8)]
         metrics, details = protocol.match_all(truth, boxes)
         assert (metrics["TP"], metrics["FP"], metrics["FN"]) == (1, 1, 1)
         assert [p["matched_gt_id"] for p in details[0]["predictions"]] == [1, None]
-        # Reversing which prediction has the higher probability yields two greedy matches.
+
         boxes[0]["score"], boxes[1]["score"] = .8, .9
         metrics, _ = protocol.match_all(truth, boxes)
         assert (metrics["TP"], metrics["FP"], metrics["FN"]) == (2, 0, 0)
@@ -97,7 +94,7 @@ class TestSegmentationEvaluation(unittest.TestCase):
     def test_iou_point_five_inclusive_and_empty_images_in_fa_denominator(self):
         metrics, _ = protocol.match_all(gt([[0, 0, 2, 2]], n_images=2),
                                       [det([0, 0, 1, 2], .9), det([0, 0, 1, 1], .8, 2)])
-        assert metrics["TP"] == 1  # IoU exactly .5 is accepted
+        assert metrics["TP"] == 1
         assert metrics["FP"] == 1
         assert metrics["R"] == 100
         assert metrics["P"] == 50
@@ -162,7 +159,7 @@ class TestSegmentationEvaluation(unittest.TestCase):
         select_args = ["select", "--manifest", str(directory / "manifest.json"),
                        "--probabilities", str(directory / "val_only.json"),
                        "--output", str(tmp_path / "selected")]
-        assert main(select_args) == 0  # no test probability list is provided to selection
+        assert main(select_args) == 0
         selection = tmp_path / "selected/selection.json"
         frozen = json.loads(selection.read_text())
         assert frozen["mask_threshold"] == .3
@@ -195,7 +192,6 @@ class TestSegmentationEvaluation(unittest.TestCase):
             main(["test", "--manifest", str(manifest), "--probabilities", str(index),
                   "--selection", str(tmp_path / "selected/selection.json"),
                   "--output", str(tmp_path / "tested")])
-
 
 if __name__ == "__main__":
     unittest.main()

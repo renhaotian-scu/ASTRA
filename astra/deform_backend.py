@@ -1,11 +1,5 @@
-"""Explicit modulated-deformable-convolution backends for the archived ASC.
 
-The original implementation uses MMCV's operator. A transparent PyTorch
-reference implements the same modulated sampling/contraction equations using
-grid_sample, with optional torchvision/MMCV compiled operators for efficiency.
-The reference is not a claim of measured parity with either compiled operator.
-Native backend parity must be checked on an environment providing those builds.
-"""
+
 from contextlib import contextmanager
 from contextvars import ContextVar
 import math
@@ -16,9 +10,8 @@ from torch.nn.modules.utils import _pair
 
 _BACKEND = ContextVar('astra_deform_backend', default='pytorch')
 
-
 def resolve_deform_backend(name):
-    """Resolve optional auto selection without swallowing errors in an operator."""
+
     if name not in ('auto', 'pytorch', 'torchvision', 'mmcv'):
         raise ValueError("backend must be 'auto', 'pytorch', 'torchvision' or 'mmcv'")
     if name != 'auto':
@@ -31,24 +24,17 @@ def resolve_deform_backend(name):
         pass
     return 'pytorch'
 
-
 @contextmanager
 def use_deform_backend(name):
-    """Choose an explicit operator per call, without a global thread-unsafe flag."""
+
     token = _BACKEND.set(resolve_deform_backend(name))
     try:
         yield
     finally:
         _BACKEND.reset(token)
 
-
 class ModulatedDeformConv2d(nn.Module):
-    """MMCV-compatible parameter container used by AdaptiveDilatedConv.
 
-    Parameter names, layout, stride/padding/groups and initialization convention
-    are preserved; the compiled operation is selected explicitly at forward.
-    This container is not a replacement for the full MMCV API.
-    """
     def __init__(self, in_channels, out_channels, kernel_size, stride=1,
                  padding=0, dilation=1, groups=1, deform_groups=1, bias=True):
         super().__init__()
@@ -72,10 +58,9 @@ class ModulatedDeformConv2d(nn.Module):
         if self.bias is not None:
             nn.init.zeros_(self.bias)
 
-
 def modulated_deform_conv2d(x, offset, mask, weight, bias, stride, padding,
                           dilation, groups, deform_groups):
-    """Dispatch with the original [dy0,dx0,dy1,dx1,...] offset ordering."""
+
     if weight.shape[1] * groups != x.shape[1]:
         raise ValueError('Weight/input convolution group mismatch')
     if offset.shape[1] != deform_groups * 2 * weight.shape[2] * weight.shape[3]:
@@ -96,17 +81,9 @@ def modulated_deform_conv2d(x, offset, mask, weight, bias, stride, padding,
         raise RuntimeError('The torchvision backend requires matching torch/torchvision builds with deform_conv2d') from exc
     return deform_conv2d(x, offset, weight, bias, stride, padding, dilation, mask)
 
-
 def modulated_deform_conv2d_reference(x, offset, mask, weight, bias, stride,
                                      padding, dilation, groups=1, deform_groups=1):
-    """Differentiable DCNv2 reference with zero padding and dy/dx offsets.
 
-    Offset channels interleave [dy0,dx0,dy1,dx1,...] within each deformable
-    group. Kernel indices are row-major. Coordinates are pixel centers and
-    grid_sample uses align_corners=False. Sampling precedes mask multiplication
-    and the ordinary grouped convolution contraction. This deliberately favors
-    clarity/portability over a fused operator's latency and memory efficiency.
-    """
     if x.ndim != 4 or weight.ndim != 4 or offset.ndim != 4 or mask.ndim != 4:
         raise ValueError('DCNv2 reference expects four-dimensional tensors')
     batch, channels, height, width = x.shape
@@ -146,9 +123,8 @@ def modulated_deform_conv2d_reference(x, offset, mask, weight, bias, stride,
     y = torch.einsum('goc,bgcn->bgon', kernels, sampled).reshape(batch, out_channels, ho, wo)
     return y if bias is None else y + bias.reshape(1, out_channels, 1, 1)
 
-
 def check_deform_backend(backend='pytorch', device='cpu'):
-    """Exercise a real operator and its gradient; return a small health record."""
+
     x = torch.randn(1, 2, 5, 5, device=device, requires_grad=True)
     w = torch.randn(3, 2, 3, 3, device=device, requires_grad=True)
     offsets = torch.zeros(1, 18, 5, 5, device=device, requires_grad=True)
